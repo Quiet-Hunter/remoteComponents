@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   entry: {
     RemoteComponent: "./src/RemoteComponent.tsx",
+    RemoteComponent2: "./src/RemoteComponent2.tsx",
   },
   output: {
     filename: "[name].js",

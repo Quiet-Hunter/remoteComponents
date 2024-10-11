@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 
-const getURL = (fileName: string) =>
-  `https://quiet-hunter.github.io/remoteComponents/dist/${fileName}.js`;
+const getURL = (compName: string) =>
+  `https://quiet-hunter.github.io/remoteComponents/dist/${compName}.js`;
 
-export const useRemoteComponent = (fileName: string, componentName: string) => {
+export const useRemoteComponent = (libName: string, compName: string) => {
   const [Component, setComponent] = useState<React.FC<any> | null>(null);
 
   useEffect(() => {
     const loadComponent = async () => {
-      const url = getURL(fileName);
+      const url = getURL(compName);
       try {
         const script = document.createElement("script");
         script.src = url;
         script.async = true;
         script.onload = () => {
-          const LoadedComponent = (window as any)[componentName].default;
+          const LoadedComponent = (window as any)[libName]?.default;
           setComponent(() => LoadedComponent);
         };
         document.body.appendChild(script);
@@ -23,7 +23,7 @@ export const useRemoteComponent = (fileName: string, componentName: string) => {
       }
     };
     loadComponent();
-  }, [fileName, componentName]);
+  }, [compName, libName]);
 
   return Component;
 };
