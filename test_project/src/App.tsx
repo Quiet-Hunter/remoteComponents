@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 const URL =
-  "https://quiet-hunter.github.io/remoteComponents/RemoteComponent.js";
+  "https://quiet-hunter.github.io/remoteComponents/dist/RemoteComponent.js";
 
 export const useRemoteComponent = (url: string, componentName: string) => {
   const [Component, setComponent] = useState<React.FC<any> | null>(null);
