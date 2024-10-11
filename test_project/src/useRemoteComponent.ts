@@ -1,29 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy } from "react";
 
-const getURL = (compName: string) =>
-  `https://quiet-hunter.github.io/remoteComponents/dist/${compName}.js`;
+const loadRemoteComponent = (globalVar: string, componentName: string) =>
+  lazy(() => {
+    return new Promise<{ default: React.ComponentType<any> }>(
+      (resolve, reject) => {
+        const scriptId = `remote-component-${componentName}`;
 
-export const useRemoteComponent = (libName: string, compName: string) => {
-  const [Component, setComponent] = useState<React.FC<any> | null>(null);
-
-  useEffect(() => {
-    const loadComponent = async () => {
-      const url = getURL(compName);
-      try {
-        const script = document.createElement("script");
-        script.src = url;
-        script.async = true;
-        script.onload = () => {
-          const LoadedComponent = (window as any)[libName]?.default;
-          setComponent(() => LoadedComponent);
-        };
-        document.body.appendChild(script);
-      } catch (error) {
-        console.error("Error loading remote component:", error);
+        if (!document.getElementById(scriptId)) {
+          const script = document.createElement("script");
+          script.id = scriptId;
+          script.src = `https://quiet-hunter.github.io/remoteComponents/dist/${componentName}.js`;
+          script.async = true;
+          script.onload = () => {
+            const LoadedComponent = (window as any)[globalVar]?.[componentName];
+            if (LoadedComponent) {
+              resolve({ default: LoadedComponent });
+            } else {
+              reject(
+                new Error(
+                  `Component ${componentName} not found on ${globalVar}`
+                )
+              );
+            }
+          };
+          script.onerror = () =>
+            reject(new Error(`Failed to load ${componentName}`));
+          document.body.appendChild(script);
+        } else {
+          const LoadedComponent = (window as any)[globalVar]?.[componentName];
+          if (LoadedComponent) {
+            resolve({ default: LoadedComponent });
+          } else {
+            reject(
+              new Error(`Component ${componentName} not found on ${globalVar}`)
+            );
+          }
+        }
       }
-    };
-    loadComponent();
-  }, [compName, libName]);
+    );
+  });
 
-  return Component;
-};
+export const useRemoteComponent = (globalVar: string, componentName: string) =>
+  loadRemoteComponent(globalVar, componentName);
