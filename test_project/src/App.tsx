@@ -3,14 +3,8 @@ import "./App.css";
 import { useRemoteComponent } from "./useRemoteComponent";
 
 function App() {
-  const RemoteComponent1 = useRemoteComponent(
-    "RemoteComponentLibrary",
-    "RemoteComponent"
-  );
-  const RemoteComponent2 = useRemoteComponent(
-    "RemoteComponentLibrary",
-    "RemoteComponent2"
-  );
+  const RemoteComponent1 = useRemoteComponent("RemoteComponent");
+  const RemoteComponent2 = useRemoteComponent("RemoteComponent2");
 
   return (
     <div>
