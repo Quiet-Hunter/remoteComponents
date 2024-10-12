@@ -25,7 +25,7 @@ const loadRemoteComponent = (componentName: string) =>
         } else {
           const LoadedComponent = (window as any)?.[componentName];
           if (LoadedComponent) {
-            resolve({ default: LoadedComponent });
+            resolve(LoadedComponent);
           } else {
             reject(new Error(`Component ${componentName} not found`));
           }
