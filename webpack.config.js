@@ -1,9 +1,12 @@
 const path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: {
     RemoteComponent: "./src/RemoteComponent.tsx",
     RemoteComponent2: "./src/RemoteComponent2.tsx",
+    TextComponent: "./src/TextComponent.tsx",
+    CbComponent: "./src/CbComponent.tsx",
   },
   output: {
     filename: "[name].js",

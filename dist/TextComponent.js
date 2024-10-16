@@ -12,9 +12,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["RemoteComponent"] = factory();
+		exports["TextComponent"] = factory();
 	else
-		root["RemoteComponent"] = factory();
+		root["TextComponent"] = factory();
 })(self, () => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
@@ -40,13 +40,13 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
-/***/ "./src/RemoteComponent.tsx":
-/*!*********************************!*\
-  !*** ./src/RemoteComponent.tsx ***!
-  \*********************************/
+/***/ "./src/TextComponent.tsx":
+/*!*******************************!*\
+  !*** ./src/TextComponent.tsx ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nvar RemoteComponent = function (_a) {\n    var textProp = _a.textProp;\n    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", null, \"RemoteComponent.tsx\"),\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", null,\n            \"Props: \",\n            textProp)));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RemoteComponent);\n\n\n//# sourceURL=webpack://remotereactcomponent/./src/RemoteComponent.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nvar TextComponent = function (_a) {\n    var text = _a.text;\n    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", null, \"TextComponent.tsx\"),\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", null,\n            \"Props: \",\n            text)));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextComponent);\n\n\n//# sourceURL=webpack://remotereactcomponent/./src/TextComponent.tsx?");
 
 /***/ })
 
@@ -134,7 +134,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/RemoteComponent.tsx");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/TextComponent.tsx");
 /******/ 	
 /******/ 	return __webpack_exports__;
 /******/ })()
