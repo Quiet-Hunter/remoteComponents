@@ -7,6 +7,7 @@ module.exports = {
     RemoteComponent2: "./src/RemoteComponent2.tsx",
     TextComponent: "./src/TextComponent.tsx",
     CbComponent: "./src/CbComponent.tsx",
+    RecordMessageRich: "./src/RecordMessageRich.tsx",
   },
   output: {
     filename: "[name].js",
@@ -25,7 +26,14 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
+  },
+  optimization: {
+    splitChunks: false,
   },
   devServer: {
     static: {
