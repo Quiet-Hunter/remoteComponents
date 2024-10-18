@@ -1,21 +1,5 @@
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-
-//    http://www.apache.org/licenses/LICENSE-2.0
-
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-// Code in this file is based on file
-//    packages/grafana-ui/src/components/Logs/LogMessageAnsi.tsx
-// of Grafana v.7.5.x or earlier and contains major refactoring
-
 import React, { useEffect, useState } from "react";
-import { css } from "@emotion/css";
-import { ansicolor } from "@grafana/ui";
+import { ansicolor } from "ansicolor";
 
 const hexRe = /[0-9a-f]{2}$/g;
 const hexxRe = /(\\x[0-9a-f]{2})/g;
@@ -41,21 +25,18 @@ interface RecordMessageRichState {
   expanded: boolean;
 }
 
-const jsonStyle = css`
-  font-weight: bold;
-  background-color: #111;
-  border: solid #333 1px;
-  &:hover {
-    background-color: #333;
-  }
-`;
+const jsonStyle = {
+  fontWeight: "bold",
+  backgroundColor: "#111",
+  border: "solid #333 1px",
+};
 
-const mentionStyle = css`
-  font-style: italic;
-  color: #777;
-  background-color: #222;
-  border: solid #777 1px;
-`;
+const mentionStyle = {
+  fontStyle: "italic",
+  color: "#777",
+  backgroundColor: "#222",
+  border: "solid #777 1px",
+};
 
 interface Style {
   [key: string]: string;
@@ -116,7 +97,7 @@ export const RecordMessageRich: React.FunctionComponent<
       chunk.repr ? (
         <span
           title={chunk.text}
-          className={mentionStyle}
+          style={mentionStyle}
           key={chunk.text + chunk.repr}
         >
           {chunk.repr[1]}
@@ -133,7 +114,7 @@ export const RecordMessageRich: React.FunctionComponent<
         value.length < msgExpandedLimit &&
         mentionsProcessor(value)}
       {!state.expanded && value.length >= msgExpandedLimit && (
-        <span className={jsonStyle} onClick={onExpandClick}>
+        <span style={jsonStyle} onClick={onExpandClick}>
           {mentionsProcessor(value.substring(0, msgExpandedLimit))}
           ...
         </span>
@@ -155,7 +136,7 @@ export const RecordMessageRich: React.FunctionComponent<
           )
         )}
       {state.expanded && (
-        <span className={jsonStyle} onClick={onExpandClick}>
+        <span style={jsonStyle} onClick={onExpandClick}>
           &uarr;&uarr;&uarr;
         </span>
       )}
