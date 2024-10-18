@@ -7,7 +7,6 @@ module.exports = {
     RemoteComponent2: "./src/RemoteComponent2.tsx",
     TextComponent: "./src/TextComponent.tsx",
     CbComponent: "./src/CbComponent.tsx",
-    RecordMessageRich: "./src/RecordMessageRich.tsx",
     RecordMessage: "./src/RecordMessage.tsx",
   },
   output: {
