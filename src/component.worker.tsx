@@ -1,8 +1,15 @@
 import React from "react";
 
-import { expose } from "react-worker-components";
+import { expose, register } from "react-worker-components";
 
-import RemoteComponent from "./RemoteComponent";
+const RemoteComponent: React.FC<any> = (props) => (
+  <>
+    <div>RemoteComponent.tsx</div>
+    <div>Props: {JSON.stringify(props)}</div>
+  </>
+);
+
+register(RemoteComponent, "RemoteComponent");
 
 const RemoteWorkerComponent = ({
   props,

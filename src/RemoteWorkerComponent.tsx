@@ -1,14 +1,7 @@
 import React, { Suspense } from "react";
 
-import { register, wrap } from "react-worker-components";
-const RemoteComponent: React.FC<any> = (props) => (
-  <>
-    <div>RemoteComponent.tsx</div>
-    <div>Props: {JSON.stringify(props)}</div>
-  </>
-);
-
-register(RemoteComponent, "RemoteComponent");
+import { wrap } from "react-worker-components";
+import RemoteComponent from "./RemoteComponent";
 
 const WorkerComponent = wrap(
   () => new Worker(new URL("./component.worker"))
