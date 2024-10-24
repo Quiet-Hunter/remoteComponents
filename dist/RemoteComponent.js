@@ -20,6 +20,16 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/react-worker-components/dist/index.modern.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-worker-components/dist/index.modern.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   expose: () => (/* binding */ k),\n/* harmony export */   register: () => (/* binding */ n),\n/* harmony export */   wrap: () => (/* binding */ E)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\nconst t=new Map,o=new Map,n=(e,r)=>{if(t.has(e))throw new Error(`component ${e} is already registered`);if(o.has(r))throw new Error(`component name ${r} is already registered`);t.set(e,r),o.set(r,e)},s=e=>{const r=t.get(e);if(!r)throw new Error(`component ${e} is not registered`);return r};function i(){return i=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o])}return e},i.apply(this,arguments)}const p=[\"children\"],f=Symbol.for(\"react.element\"),a=e=>{if(\"object\"==typeof process&&\"production\"!==\"development\"){if(\"object\"!=typeof e||null===e)return!1;if(\"v\"in e)return!0;if(\"number\"!=typeof e.i)return!1;if(\"e\"in e){const{e:r}=e;if(\"object\"!=typeof r||null===r)return!1;if(!a(r.props))return!1;const{type:t}=r;return\"string\"==typeof t||\"object\"==typeof t&&null!==t&&\"string\"==typeof t.c}if(\"a\"in e){const{a:r}=e;return Array.isArray(r)&&r.every(a)}if(\"o\"in e){const{o:r}=e;return\"object\"==typeof r&&null!==r&&Object.values(r).every(a)}return\"object\"==typeof e.u}return!0},c=new Map,u=new WeakMap,l=\"undefined\"!=typeof self&&!self.document;let y=0;const d=l?()=>++y:()=>--y;let w=0;const h=()=>{if(!(c.size<w+10)){for(const[e,r]of c)r.deref()||c.delete(e);w=c.size}},m=e=>{if(setTimeout(h,1),\"object\"!=typeof e||null===e)return{v:e};let r;if(u.has(e)?r=u.get(e):(r=d(),u.set(e,r),c.set(r,new WeakRef(e))),e.$$typeof===f)return{i:r,e:{props:m(e.props),type:\"string\"==typeof e.type?e.type:{c:s(e.type)}}};if(Array.isArray(e))return{i:r,a:e.map(m)};if(Object.getPrototypeOf(e)===Object.prototype){const t={};return Object.entries(e).forEach(([e,r])=>{if(\"symbol\"==typeof e)throw new Error(\"symbol keys are not supported\");t[e]=m(r)}),{i:r,o:t}}return{i:r,u:e}},g=r=>{if(!a(r))throw new Error(\"not serialized type\");if(\"v\"in r)return r.v;if(c.has(r.i)){var t;const e=null==(t=c.get(r.i))?void 0:t.deref();if(e)return e}if(\"e\"in r){const t=((r,t)=>{let{children:o}=t,n=function(e,r){if(null==e)return{};var t,o,n={},s=Object.keys(e);for(o=0;o<s.length;o++)r.indexOf(t=s[o])>=0||(n[t]=e[t]);return n}(t,p);return Array.isArray(o)?(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(r,n,...o):o?(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(r,n,o):(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(r,n)})(\"string\"==typeof r.e.type?r.e.type:(e=>{const r=o.get(e);if(!r)throw new Error(`component name ${e} is not registered`);return r})(r.e.type.c),g(r.e.props));return c.set(r.i,new WeakRef(t)),t}if(\"a\"in r){const e=r.a.map(g);return c.set(r.i,new WeakRef(e)),e}if(\"o\"in r){const e={};return Object.entries(r.o).forEach(([r,t])=>{e[r]=g(t)}),c.set(r.i,new WeakRef(e)),e}if(\"u\"in r)return c.set(r.i,new WeakRef(r.u)),r.u;throw new Error(\"should not reach here\")},b=(e,r)=>{const t=e(r);return j(t)},v=Symbol.for(\"react.element\"),j=e=>{if(\"object\"!=typeof e||null===e)return e;const r=e;if(r.$$typeof===v){const{type:e}=r;if(\"string\"!=typeof e&&!t.has(e))return b(e,r.props)}if(\"object\"!=typeof r.props||null===r.props)return e;const{children:o}=r.props;if(Array.isArray(o)){const t=o.map(j);return t.every((e,r)=>e===o[r])?e:i({},e,{props:i({},r.props,{children:t})})}const n=j(o);return n===o?e:i({},e,{props:i({},r.props,{children:n})})},k=(e,r)=>{self.addEventListener(\"message\",t=>{const{key:o,id:n,props:s}=t.data;if(o!==r)return;if(!n||!s)throw new Error(\"no id or props found\");const i=g(s),p=()=>{try{const r=b(e,i);self.postMessage({id:n,ele:m(r)})}catch(e){e instanceof Promise?e.then(p):self.postMessage({id:n,err:e})}};p()})},E=(e,t)=>o=>{const n=(()=>{let{state:r}=e;if(!r){const t=e(),o=new WeakMap,n=new Map;t.addEventListener(\"message\",e=>{const{id:r,err:t,ele:s}=e.data,i=o.get(n.get(r));n.delete(r),i&&(t?i.err=t:i.result=g(s),null==i.resolve||i.resolve())}),r={worker:t,used:new Set,propsMap:o,idMap:n,i:0},e.state=r}return r})();if((0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{const r=Symbol();return n.used.add(r),()=>{n.used.delete(r),!n.used.size&&n.worker&&(n.worker.terminate(),delete e.state)}},[n]),!n.propsMap.has(o)){const e={},r=new Promise(r=>{const s=\"id\"+ ++n.i;e.resolve=r,n.propsMap.set(o,e),n.idMap.set(s,o),n.worker.postMessage({key:t,id:s,props:m(o)})});throw e.promise=r,r}const s=n.propsMap.get(o);if(s.err)throw s.err;if(void 0===s.result)throw s.promise;return s.result};\n//# sourceMappingURL=index.modern.mjs.map\n\n\n//# sourceURL=webpack://remotereactcomponent/./node_modules/react-worker-components/dist/index.modern.js?");
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react.development.js":
 /*!*****************************************************!*\
   !*** ./node_modules/react/cjs/react.development.js ***!
@@ -46,7 +56,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \*********************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar RemoteComponent = function (props) { return (react_1.default.createElement(react_1.default.Fragment, null,\n    react_1.default.createElement(\"div\", null, \"RemoteComponent.tsx\"),\n    react_1.default.createElement(\"div\", null,\n        \"Props: \",\n        JSON.stringify(props)))); };\nexports[\"default\"] = RemoteComponent;\n\n\n//# sourceURL=webpack://remotereactcomponent/./src/RemoteComponent.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar react_worker_components_1 = __webpack_require__(/*! react-worker-components */ \"./node_modules/react-worker-components/dist/index.modern.js\");\nvar RemoteComponent = function (props) { return (react_1.default.createElement(react_1.default.Fragment, null,\n    react_1.default.createElement(\"div\", null, \"RemoteComponent.tsx\"),\n    react_1.default.createElement(\"div\", null,\n        \"Props: \",\n        JSON.stringify(props)))); };\n(0, react_worker_components_1.register)(RemoteComponent, \"RemoteComponent\");\nexports[\"default\"] = RemoteComponent;\n\n\n//# sourceURL=webpack://remotereactcomponent/./src/RemoteComponent.tsx?");
 
 /***/ })
 
@@ -80,6 +90,46 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
