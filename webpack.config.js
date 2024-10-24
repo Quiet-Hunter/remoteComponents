@@ -8,6 +8,7 @@ module.exports = {
     TextComponent: "./src/TextComponent.tsx",
     CbComponent: "./src/CbComponent.tsx",
     RecordMessage: "./src/RecordMessage.tsx",
+    Worker: "./src/test.worker.js",
   },
   output: {
     filename: "[name].js",
