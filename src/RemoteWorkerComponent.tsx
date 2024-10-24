@@ -1,7 +1,9 @@
 import React, { Suspense, useState } from "react";
 
-import { wrap } from "react-worker-components";
+import { register, wrap } from "react-worker-components";
 import RemoteComponent from "./RemoteComponent";
+
+register(RemoteComponent, "RemoteComponent");
 
 const WorkerComponent = wrap(
   () => new Worker(new URL("./component.worker"))
