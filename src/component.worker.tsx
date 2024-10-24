@@ -3,7 +3,7 @@ import { expose } from "react-worker-components";
 import RemoteComponent from "./RemoteComponent";
 
 const TextComponent = ({ text, children }: { text: string; children: any }) => {
-  const [updatedText, setUpdatedText] = useState(text);
+  const [updatedText, setUpdatedText] = useState(text || "");
 
   useEffect(() => {
     onmessage = function (e) {
