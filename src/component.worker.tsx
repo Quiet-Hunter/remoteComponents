@@ -1,8 +1,15 @@
 import React from "react";
 
-import { expose } from "react-worker-components";
+import { expose, register } from "react-worker-components";
 
-import RemoteComponent from "./RemoteComponent";
+const RemoteComponent: React.FC<{ textProp: string }> = ({ textProp }) => (
+  <>
+    <div>RemoteComponent.tsx</div>
+    <div>Props: {textProp}</div>
+  </>
+);
+
+register(RemoteComponent, "RemoteComponent");
 
 onmessage = function (e) {
   console.log("Message received from main script: " + JSON.stringify(e.data));
