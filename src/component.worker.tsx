@@ -6,7 +6,7 @@ import RemoteComponent from "./RemoteComponent";
 
 onmessage = function (e) {
   console.log("Message received from main script: " + JSON.stringify(e.data));
-  postMessage(() => <TextComponent text={JSON.stringify(e.data)} />);
+  postMessage("Remote Worker response: " + Math.random());
 };
 
 const TextComponent = ({
