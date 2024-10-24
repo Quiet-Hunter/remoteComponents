@@ -9,22 +9,23 @@ onmessage = function (e) {
   postMessage("Remote Worker response: " + Math.random());
 };
 
-const TextComponent = ({
-  text,
+const RemoteWorkerComponent = ({
+  props,
   children,
 }: {
-  text: string;
+  props: any;
   children?: any;
 }) => {
+  console.log("Props from main thread: ", JSON.stringify(props));
   return (
     <div>
       <div>Hello from worker: {Math.random()}</div>
       <h1>Main TextBox</h1>
       {children}
       <h1>Worker TextBox</h1>
-      <RemoteComponent textProp={text} />
+      <RemoteComponent {...props} />
     </div>
   );
 };
 
-expose(TextComponent);
+expose(RemoteWorkerComponent);
