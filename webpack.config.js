@@ -8,7 +8,7 @@ module.exports = {
     TextComponent: "./src/TextComponent.tsx",
     CbComponent: "./src/CbComponent.tsx",
     RecordMessage: "./src/RecordMessage.tsx",
-    Worker: "./src/test.worker.js",
+    Worker: "./src/remote.worker.tsx",
     ComponentWorker: "./src/component.worker.tsx",
   },
   output: {
