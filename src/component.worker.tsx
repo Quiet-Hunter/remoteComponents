@@ -1,15 +1,7 @@
 import React from "react";
 
-import { expose, register } from "react-worker-components";
-
-const RemoteComponent: React.FC<any> = (props) => (
-  <>
-    <div>RemoteComponent.tsx</div>
-    <div>Props: {JSON.stringify(props)}</div>
-  </>
-);
-
-register(RemoteComponent, "RemoteComponent");
+import { expose } from "react-worker-components";
+import RemoteComponent from "./RemoteComponent";
 
 const RemoteWorkerComponent = ({
   props,
@@ -22,9 +14,9 @@ const RemoteWorkerComponent = ({
   return (
     <div>
       <div>Hello from worker: {Math.random()}</div>
-      <h1>Main TextBox</h1>
+      <h1>Remote Main TextBox</h1>
       {children}
-      <h1>Worker TextBox</h1>
+      <h1>Remote Worker TextBox</h1>
       <RemoteComponent {...props} />
     </div>
   );

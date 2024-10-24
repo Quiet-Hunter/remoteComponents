@@ -3,7 +3,7 @@ import { register } from "react-worker-components";
 
 const RemoteComponent: React.FC<any> = (props) => (
   <>
-    <div>RemoteComponent.tsx</div>
+    <div>Remote RemoteComponent.tsx</div>
     <div>Props: {JSON.stringify(props)}</div>
   </>
 );
