@@ -1,7 +1,12 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 
 import { register, wrap } from "react-worker-components";
-import RemoteComponent from "./RemoteComponent";
+const RemoteComponent: React.FC<any> = (props) => (
+  <>
+    <div>RemoteComponent.tsx</div>
+    <div>Props: {JSON.stringify(props)}</div>
+  </>
+);
 
 register(RemoteComponent, "RemoteComponent");
 
@@ -14,7 +19,7 @@ const RemoteWorkerComponent = (props: any) => {
     <div>
       <Suspense fallback="Loading...">
         <WorkerComponent {...props}>
-          <RemoteComponent />
+          <RemoteComponent {...props} />
         </WorkerComponent>
       </Suspense>
     </div>
