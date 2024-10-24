@@ -1,31 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
 import { expose } from "react-worker-components";
+
 import RemoteComponent from "./RemoteComponent";
 
-const TextComponent = ({ text, children }: { text: string; children: any }) => {
-  const [updatedText, setUpdatedText] = useState(text || "");
+onmessage = function (e) {
+  console.log("Message received from main script: " + JSON.stringify(e.data));
+  postMessage(<TextComponent text={JSON.stringify(e.data)} />);
+};
 
-  useEffect(() => {
-    onmessage = function (e) {
-      console.log(
-        "Message received from main script: " + JSON.stringify(e.data)
-      );
-
-      // Update the component state with the received data
-      if (e.data && typeof e.data === "string") {
-        setUpdatedText(e.data);
-      }
-      postMessage("Remote Worker response: " + Math.random());
-    };
-  }, []);
-
+const TextComponent = ({
+  text,
+  children,
+}: {
+  text: string;
+  children?: any;
+}) => {
   return (
     <div>
       <div>Hello from worker: {Math.random()}</div>
       <h1>Main TextBox</h1>
       {children}
       <h1>Worker TextBox</h1>
-      <RemoteComponent textProp={updatedText} />
+      <RemoteComponent textProp={text} />
     </div>
   );
 };
