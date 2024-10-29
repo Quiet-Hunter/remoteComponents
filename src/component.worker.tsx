@@ -13,10 +13,10 @@ const RemoteWorkerComponent = ({
   console.log("Props from main thread: ", JSON.stringify(props));
   return (
     <div>
-      <div>Hello from worker: {Math.random()}</div>
-      <h1>Remote Main TextBox</h1>
+      <h1>Remote Worker Component</h1>
+      <h3>Main TextBox</h3>
       {children}
-      <h1>Remote Worker TextBox</h1>
+      <h3>Worker TextBox</h3>
       <RemoteComponent {...props} />
     </div>
   );
