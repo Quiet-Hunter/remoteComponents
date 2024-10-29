@@ -4,6 +4,14 @@ import { EventEmitter } from "events";
 
 const eventEmitter = new EventEmitter();
 
+self.onmessage = (event) => {
+  console.log(
+    "Worker received message (props from main thread): ",
+    event.data.props.o
+  );
+  eventEmitter.emit("updateProps", event.data.props.o);
+};
+
 const RemoteComponent: React.FC<any> = (props) => {
   useEffect(() => {
     const handleUpdateProps = (newProps: any) => {
