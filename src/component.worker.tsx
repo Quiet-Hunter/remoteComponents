@@ -8,13 +8,13 @@ self.onmessage = (event) => {
 };
 
 const RemoteWorkerComponent = ({
-  props,
+  props = {},
   children,
 }: {
   props: any;
   children?: any;
 }) => {
-  const [propsFromMain, _setPropsFromMain] = useState(props || {});
+  const [propsFromMain, _setPropsFromMain] = useState(props);
   return (
     <div>
       <h1>Remote Worker Component</h1>
