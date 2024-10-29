@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { expose } from "react-worker-components";
 import RemoteComponent from "./RemoteComponent";
 import { EventEmitter } from "events";
@@ -8,9 +8,9 @@ const eventEmitter = new EventEmitter();
 self.onmessage = (event) => {
   console.log(
     "Worker received message (props from main thread): ",
-    event.data.props
+    event.data.props.o
   );
-  eventEmitter.emit("updateProps", event.data.props);
+  eventEmitter.emit("updateProps", event.data.props.o);
 };
 
 const RemoteWorkerComponent = ({
@@ -20,7 +20,7 @@ const RemoteWorkerComponent = ({
   props: any;
   children?: any;
 }) => {
-  const [componentProps, setComponentProps] = useState(props);
+  const [componentProps, setComponentProps] = React.useState(props);
 
   useEffect(() => {
     const handleUpdateProps = (newProps: any) => {
