@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { expose } from "react-worker-components";
 import RemoteComponent from "./RemoteComponent";
 import { EventEmitter } from "events";
@@ -20,17 +20,12 @@ const RemoteWorkerComponent = ({
   props: any;
   children?: any;
 }) => {
-  useEffect(() => {
-    const handleUpdateProps = (newProps: any) => {
-      console.log(newProps);
-      expose(RemoteWorkerComponent);
-    };
+  const handleUpdateProps = (newProps: any) => {
+    console.log(newProps);
+    expose(RemoteWorkerComponent);
+  };
 
-    eventEmitter.on("updateProps", handleUpdateProps);
-    return () => {
-      eventEmitter.off("updateProps", handleUpdateProps);
-    };
-  }, []);
+  eventEmitter.on("updateProps", handleUpdateProps);
 
   return (
     <div>
