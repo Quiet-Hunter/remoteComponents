@@ -20,7 +20,9 @@ const RemoteWorkerComponent = ({
   props: any;
   children?: any;
 }) => {
-  const [componentProps, setComponentProps] = useState(props);
+  const [componentProps, setComponentProps] = useState({
+    textProp: "default prop",
+  });
 
   useEffect(() => {
     const handleUpdateProps = (newProps: any) => {
