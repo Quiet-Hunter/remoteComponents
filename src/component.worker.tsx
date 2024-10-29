@@ -3,10 +3,6 @@ import React from "react";
 import { expose } from "react-worker-components";
 import RemoteComponent from "./RemoteComponent";
 
-self.onmessage = (event) => {
-  console.log("Worker received message: ", event.data);
-};
-
 const RemoteWorkerComponent = ({
   props,
   children,
@@ -14,7 +10,12 @@ const RemoteWorkerComponent = ({
   props: any;
   children?: any;
 }) => {
-  console.log("Props from main thread: ", JSON.stringify(props));
+  self.onmessage = (event) => {
+    console.log(
+      "Worker received message (props from main thread): ",
+      event.data
+    );
+  };
   return (
     <div>
       <h1>Remote Worker Component</h1>
