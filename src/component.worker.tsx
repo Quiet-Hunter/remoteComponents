@@ -20,13 +20,9 @@ const RemoteWorkerComponent = ({
   props: any;
   children?: any;
 }) => {
-  const [componentProps, setComponentProps] = useState({
-    textProp: "default prop",
-  });
-
   useEffect(() => {
     const handleUpdateProps = (newProps: any) => {
-      setComponentProps(newProps);
+      console.log(newProps);
       expose(RemoteWorkerComponent);
     };
 
@@ -42,7 +38,7 @@ const RemoteWorkerComponent = ({
       <h3>Main TextBox</h3>
       {children}
       <h3>Worker TextBox</h3>
-      <RemoteComponent {...componentProps} />
+      <RemoteComponent {...props} />
     </div>
   );
 };
