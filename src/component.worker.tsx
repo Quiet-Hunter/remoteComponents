@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { expose } from "react-worker-components";
 import RemoteComponent from "./RemoteComponent";
+import { EventEmitter } from "events";
+
+const eventEmitter = new EventEmitter();
+
+self.onmessage = (event) => {
+  console.log(
+    "Worker received message (props from main thread): ",
+    event.data.props
+  );
+  eventEmitter.emit("updateProps", event.data.props);
+};
 
 const RemoteWorkerComponent = ({
   props = {},
@@ -9,15 +20,17 @@ const RemoteWorkerComponent = ({
   props: any;
   children?: any;
 }) => {
-  const [curProps, setCurProps] = useState(props);
+  const [componentProps, setComponentProps] = useState(props);
 
   useEffect(() => {
-    self.onmessage = (event) => {
-      console.log(
-        "Worker received message (props from main thread): ",
-        event.data.props
-      );
-      setCurProps(event.data.props);
+    const handleUpdateProps = (newProps: any) => {
+      setComponentProps(newProps);
+      expose(RemoteWorkerComponent);
+    };
+
+    eventEmitter.on("updateProps", handleUpdateProps);
+    return () => {
+      eventEmitter.off("updateProps", handleUpdateProps);
     };
   }, []);
 
@@ -27,7 +40,7 @@ const RemoteWorkerComponent = ({
       <h3>Main TextBox</h3>
       {children}
       <h3>Worker TextBox</h3>
-      <RemoteComponent {...curProps} />
+      <RemoteComponent {...componentProps} />
     </div>
   );
 };
