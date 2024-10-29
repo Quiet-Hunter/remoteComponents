@@ -3,6 +3,10 @@ import React from "react";
 import { expose } from "react-worker-components";
 import RemoteComponent from "./RemoteComponent";
 
+self.onmessage = (event) => {
+  console.log("Worker received message: ", event.data);
+};
+
 const RemoteWorkerComponent = ({
   props,
   children,
