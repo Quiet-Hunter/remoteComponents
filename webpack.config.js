@@ -5,7 +5,6 @@ module.exports = {
   entry: {
     RemoteComponent: "./src/RemoteComponent.tsx",
     RemoteComponent2: "./src/RemoteComponent2.tsx",
-    TextComponent: "./src/TextComponent.tsx",
     CbComponent: "./src/CbComponent.tsx",
     RecordMessage: "./src/RecordMessage.tsx",
     Worker: "./src/remote.worker.tsx",

@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 
 import { expose } from "react-worker-components";
+import ChildComponent from "./ChildComponent";
 
 const TextComponent = ({
   text,
@@ -14,6 +15,7 @@ const TextComponent = ({
       <div>{text}</div>
       Children:
       {children}
+      <ChildComponent />
     </div>
   );
 };
