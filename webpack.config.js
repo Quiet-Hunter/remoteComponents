@@ -10,7 +10,7 @@ module.exports = {
     RecordMessage: "./src/RecordMessage.tsx",
     Worker: "./src/remote.worker.tsx",
     ComponentWorker: "./src/component.worker.tsx",
-    Hello: "./src/Hello.worker.tsx",
+    TextComponent: "./src/TextComponent.worker.tsx",
   },
   output: {
     filename: "[name].js",
