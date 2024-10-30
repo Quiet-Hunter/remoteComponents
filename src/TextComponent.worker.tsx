@@ -8,17 +8,20 @@ self.onmessage = (event) => {
 };
 
 const TextComponent = ({
-  row: { entry },
+  row,
+  text,
   children,
 }: {
-  row: { entry: string };
+  row?: { entry: string };
+  text?: string;
   children: ReactNode;
 }) => {
   return (
     <div>
-      <div>{entry}</div>
+      <div>{row?.entry || ""}</div>
+      <div>{text}</div>
       {children}
-      <ChildComponent {...{ entry }} />
+      <ChildComponent {...{ text }} />
     </div>
   );
 };
