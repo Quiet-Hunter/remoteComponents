@@ -13,7 +13,6 @@ const TextComponent = ({
   return (
     <div>
       <div>{text}</div>
-      Children:
       {children}
       <ChildComponent />
     </div>
