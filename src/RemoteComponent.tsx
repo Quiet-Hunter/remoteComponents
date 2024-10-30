@@ -10,6 +10,9 @@ self.onmessage = (event) => {
     event.data.props.o
   );
   eventEmitter.emit("updateProps", event.data.props.o);
+  self.postMessage(
+    <span style={{ color: "red" }}>{JSON.stringify(event.data.props.o)}</span>
+  );
 };
 
 const RemoteComponent: React.FC<any> = (props) => {
