@@ -4,7 +4,9 @@ import { expose } from "react-worker-components";
 // import ChildComponent from "./ChildComponent";
 
 self.onmessage = (event) => {
-  console.log("Remote Worker got message: " + JSON.stringify(event.data));
+  console.log(
+    "Message received (props to serialize): " + JSON.stringify(event.data)
+  );
 };
 
 const TextComponent = ({
