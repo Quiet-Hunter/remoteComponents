@@ -50,23 +50,13 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
-/***/ "./src/ChildComponent.tsx":
-/*!********************************!*\
-  !*** ./src/ChildComponent.tsx ***!
-  \********************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.ChildComponent = void 0;\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar react_worker_components_1 = __webpack_require__(/*! react-worker-components */ \"./node_modules/react-worker-components/dist/index.modern.js\");\nvar ChildComponent = function (props) {\n    return react_1.default.createElement(react_1.default.Fragment, null);\n};\nexports.ChildComponent = ChildComponent;\n(0, react_worker_components_1.register)(exports.ChildComponent, \"ChildComponent\");\nexports[\"default\"] = exports.ChildComponent;\n\n\n//# sourceURL=webpack://remotereactcomponent/./src/ChildComponent.tsx?");
-
-/***/ }),
-
 /***/ "./src/TextComponent.worker.tsx":
 /*!**************************************!*\
   !*** ./src/TextComponent.worker.tsx ***!
   \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar react_worker_components_1 = __webpack_require__(/*! react-worker-components */ \"./node_modules/react-worker-components/dist/index.modern.js\");\nvar ChildComponent_1 = __importDefault(__webpack_require__(/*! ./ChildComponent */ \"./src/ChildComponent.tsx\"));\nself.onmessage = function (event) {\n    console.log(\"Remote Worker got message: \" + JSON.stringify(event.data));\n};\nvar TextComponent = function (_a) {\n    var row = _a.row, text = _a.text, children = _a.children;\n    return (react_1.default.createElement(\"div\", null,\n        react_1.default.createElement(\"div\", { style: { color: \"red\" } }, (row === null || row === void 0 ? void 0 : row.entry) || \"\"),\n        react_1.default.createElement(\"div\", null, text),\n        children,\n        react_1.default.createElement(ChildComponent_1.default, { text: text })));\n};\n(0, react_worker_components_1.expose)(TextComponent);\n\n\n//# sourceURL=webpack://remotereactcomponent/./src/TextComponent.worker.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar react_worker_components_1 = __webpack_require__(/*! react-worker-components */ \"./node_modules/react-worker-components/dist/index.modern.js\");\n// import ChildComponent from \"./ChildComponent\";\nself.onmessage = function (event) {\n    console.log(\"Remote Worker got message: \" + JSON.stringify(event.data));\n};\nvar TextComponent = function (_a) {\n    var row = _a.row, text = _a.text, children = _a.children;\n    return (react_1.default.createElement(\"div\", null,\n        react_1.default.createElement(\"div\", { style: { color: \"red\" } }, (row === null || row === void 0 ? void 0 : row.entry) || \"\"),\n        react_1.default.createElement(\"div\", null, text),\n        children));\n};\n(0, react_worker_components_1.expose)(TextComponent);\n\n\n//# sourceURL=webpack://remotereactcomponent/./src/TextComponent.worker.tsx?");
 
 /***/ })
 
