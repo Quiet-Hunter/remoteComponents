@@ -18,7 +18,7 @@ const TextComponent = ({
 }) => {
   return (
     <div>
-      <div>{row?.entry || ""}</div>
+      <div style={{ color: "red" }}>{row?.entry || ""}</div>
       <div>{text}</div>
       {children}
       <ChildComponent {...{ text }} />
