@@ -10,6 +10,7 @@ module.exports = {
     Worker: "./src/remote.worker.tsx",
     ComponentWorker: "./src/component.worker.tsx",
     TextComponent: "./src/TextComponent.worker.tsx",
+    BattleResult: "./src/BattleResult.worker.tsx",
   },
   output: {
     filename: "[name].js",
