@@ -2,10 +2,13 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: "./src/TestRemoteComponent.tsx",
+  entry: {
+    TestRemoteComponent: "./src/TestRemoteComponent.tsx",
+    BattleResults: "./src/BattleResults/components/BattleResults.tsx",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "TestRemoteComponent.bundle.js",
+    filename: "[name].bundle.js",
     libraryTarget: "umd",
     globalObject: "this",
   },
