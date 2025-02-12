@@ -7,9 +7,7 @@ export interface TypeWrapperProps {
   json: { [k: string]: any };
 }
 
-const TypeWrapper: React.FC<TypeWrapperProps> = (props) => {
-  console.log(props);
-  let json = props.json;
+const TypeWrapper: React.FC<TypeWrapperProps> = ({ json }) => {
   if (json.hasOwnProperty("extra")) {
     json = { ...json, ...JSON.parse(json.extra) };
   }
