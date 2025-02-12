@@ -4,7 +4,7 @@ module.exports = {
   mode: "production",
   entry: {
     TestRemoteComponent: "./src/TestRemoteComponent.tsx",
-    BattleResults: "./src/BattleResults/components/BattleResults.tsx",
+    BattleResults: "./src/BattleResults/components/TypeWrapper.tsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
