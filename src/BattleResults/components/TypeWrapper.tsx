@@ -7,7 +7,9 @@ export interface TypeWrapperProps {
   json: { [k: string]: any };
 }
 
-export const TypeWrapper: React.FC<TypeWrapperProps> = ({ json }) => {
+export const TypeWrapper: React.FC<TypeWrapperProps> = (props) => {
+  console.log(props);
+  let json = props.json;
   if (json.hasOwnProperty("extra")) {
     json = { ...json, ...JSON.parse(json.extra) };
   }
@@ -18,6 +20,7 @@ export const TypeWrapper: React.FC<TypeWrapperProps> = ({ json }) => {
   ) {
     return <BattleResults data={parse(json._message)} />;
   }
+  return <span color="red">Wrong format: {JSON.stringify(json)}</span>;
 
   throw new Error("Wrong format");
 };
