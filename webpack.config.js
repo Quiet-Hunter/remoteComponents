@@ -9,13 +9,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].mjs",
+    filename: "[name].js",
     library: {
-      type: "module",
+      type: "system",
     },
-  },
-  experiments: {
-    outputModule: true,
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
