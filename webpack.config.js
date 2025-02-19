@@ -8,15 +8,18 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
-    libraryTarget: "umd",
-    globalObject: "this",
+    filename: "[name].mjs",
+    library: {
+      type: "module",
+    },
+  },
+  experiments: {
+    outputModule: true,
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
   externals: {
-    // Do not bundle React; use the host's version.
     react: "React",
   },
   module: {
