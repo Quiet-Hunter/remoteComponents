@@ -2,6 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
+  target: "web",
   entry: {
     TestRemoteComponent: "./src/TestRemoteComponent.tsx",
     BattleResults: "./src/BattleResults/components/TypeWrapper.tsx",
