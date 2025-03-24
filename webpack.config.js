@@ -11,8 +11,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
     library: {
-      type: "window",
+      type: "module",
     },
+  },
+  experiments: {
+    outputModule: true,
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
