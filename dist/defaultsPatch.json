@@ -1,0 +1,21 @@
+[
+  {
+    "op": "replace",
+    "path": "/defaultMaxLines",
+    "value": 500
+  },
+  {
+    "op": "replace",
+    "path": "/maxQueriesStored",
+    "value": 18
+  },
+  {
+    "op": "remove",
+    "path": "/labelAliases/~0level/5"
+  },
+  {
+    "op": "replace",
+    "path": "/defaultsUrl",
+    "value": "https://quiet-hunter.github.io/remoteComponents/dist/defaults.json"
+  }
+]
