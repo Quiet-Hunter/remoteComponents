@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/defaultsUrl",
-    "value": "https://quiet-hunter.github.io/remoteComponents/dist/defaults.json"
+    "value": "https://quiet-hunter.github.io/remoteComponents/dist/defaultsPatch.json"
   }
 ]
