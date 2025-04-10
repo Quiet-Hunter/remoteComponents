@@ -1,0 +1,91 @@
+[
+  {
+    "op": "add",
+    "path": "/defaultDS",
+    "value": "Loki-1"
+  },
+  {
+    "op": "replace",
+    "path": "/defaultMaxLines",
+    "value": 200
+  },
+  {
+    "op": "add",
+    "path": "/omitFromContext/-",
+    "value": "outbox_key"
+  },
+  {
+    "op": "replace",
+    "path": "/maxQueriesStored",
+    "value": 19
+  },
+  {
+    "op": "replace",
+    "path": "/maxQueryTs",
+    "value": 8
+  },
+  {
+    "op": "replace",
+    "path": "/asciiMessageWidth",
+    "value": 112
+  },
+  {
+    "op": "remove",
+    "path": "/streamHierarchy/3"
+  },
+  {
+    "op": "add",
+    "path": "/subStream/1",
+    "value": "~pod"
+  },
+  {
+    "op": "remove",
+    "path": "/noColumn/13"
+  },
+  {
+    "op": "remove",
+    "path": "/noJSONTree/7"
+  },
+  {
+    "op": "add",
+    "path": "/noJSONTree/-",
+    "value": "timeEpochMs"
+  },
+  {
+    "op": "add",
+    "path": "/timeSortPriority/0",
+    "value": "tsK8s"
+  },
+  {
+    "op": "remove",
+    "path": "/timeSortPriority/2"
+  },
+  {
+    "op": "add",
+    "path": "/labelAliases/test",
+    "value": []
+  },
+  {
+    "op": "remove",
+    "path": "/labelAliases/~0level/2"
+  },
+  {
+    "op": "remove",
+    "path": "/labelAliases/~0level/4"
+  },
+  {
+    "op": "replace",
+    "path": "/remoteCompUrl",
+    "value": "qwe"
+  },
+  {
+    "op": "replace",
+    "path": "/remoteCompRegex",
+    "value": "qwe"
+  },
+  {
+    "op": "replace",
+    "path": "/remoteCompMode",
+    "value": "systemjs"
+  }
+]
