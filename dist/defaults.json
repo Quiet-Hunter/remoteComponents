@@ -1,8 +1,8 @@
 {
   "defaultMaxLines": 40,
-  "defaultLokiQuery!": "{level=~\"test\"}",
+  "defaultLokiQuery": "{level=~\"test\"}",
   "labelAliases": {
-    "~level!": ["test"]
+    "~level": ["test"]
   },
   "streamHierarchy": ["test"]
 }
